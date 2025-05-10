@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.{ts,tsx}",
     "format": "prettier --write src/**/*.{ts,tsx,scss}",
-    "lint:css": "stylelint src/**/*.{scss,css}",
+    "lint:css": "stylelint --cache src/**/*.{scss,css}",
     "testTerser":"webpack --config webpack.config.test.js"
   },
   "keywords": [],
@@ -76,6 +76,21 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^6.26.2"
+  },
+   "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
   },
   "browserslist": [
     "> 1%",
