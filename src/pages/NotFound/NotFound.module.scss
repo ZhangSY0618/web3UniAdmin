@@ -1,0 +1,25 @@
+.notFound {
+    text-align: center;
+    padding: 40px;
+  
+    h1 {
+      color: #d32f2f;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  
+    .link {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
