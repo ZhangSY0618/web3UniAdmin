@@ -18,7 +18,7 @@ module.exports = merge(common, {
           {
             loader: 'css-loader', // 处理 CSS 模块和 @import
             options: {
-              importLoaders: 2, // 允许 postcss-loader 和 sass-loader 处理 @import（对 SCSS 有效）
+              importLoaders: 1, // 允许 postcss-loader 和 sass-loader 处理 @import（对 SCSS 有效）
               sourceMap: false, // 生产环境禁用 sourceMap，减少文件大小
             },
           },
@@ -86,7 +86,7 @@ module.exports = merge(common, {
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
       // 可选：配置白名单或动态类名
       safelist: {
-        standard: [/^sm:/, /^md:/, /^lg:/, /^hover:/, /^focus:/], // 保留 Tailwind 动态类
+        standard: [/^sm:/, /^md:/, /^lg:/, /^hover:/, /^focus:/,/^space-y-/], // 保留 Tailwind 动态类
         greedy: [/^custom-/], // 保留自定义类
       },
     })

@@ -5,5 +5,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  safelist: []
+  safelist: ["space-y-6"]
 };

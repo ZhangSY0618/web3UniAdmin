@@ -13,8 +13,8 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   // useLocation 钩子，用于获取当前路由信息，比如用户从哪个页面来的
   const location = useLocation();
-  // useState 钩子，管理 email 输入框的值，初始为空字符串
-  const [email, setEmail] = useState('');
+  // useState 钩子，管理 userName 输入框的值，初始为空字符串
+  const [email, setUserName] = useState('');
   // useState 钩子，管理 password 输入框的值，初始为空字符串
   const [password, setPassword] = useState('');
   // useState 钩子，管理错误提示信息，初始为空字符串
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
     // 阻止表单默认提交行为（比如刷新页面）
     e.preventDefault();
     // 模拟登录验证（这里是假数据，实际项目中需要替换为真实的 API 调用）
-    if (email === 'user@example.com' && password === 'password123') {
+    if (email === 'user123' && password === 'password123') {
       // 如果验证成功，将 token 存入 localStorage，用于 ProtectedRoute 验证
       localStorage.setItem('authToken', 'mock-token');
       // 获取用户来源页面（如果没有就默认跳转到首页 '/'）
@@ -95,7 +95,7 @@ const Login: React.FC = () => {
               label="UserName"
               variant="outlined"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setUserName(e.target.value)}
               InputProps={{
                 style: { backgroundColor: '#374151', color: '#e2e8f0', paddingLeft: '20px', paddingRight: '20px' },
               }}
