@@ -23,6 +23,16 @@ const Home = () => {
               Dashboard
             </NavLink>
           </li>
+           <li>
+            <NavLink
+              to="/graphQLCRUD"
+              className={({ isActive }) =>
+                `block py-2 px-4 rounded ${isActive ? 'bg-blue-500' : 'hover:bg-gray-700'}`
+              }
+            >
+              GraphQLCRUD
+            </NavLink>
+          </li>
           <li>
             <button
               onClick={handleLogout}

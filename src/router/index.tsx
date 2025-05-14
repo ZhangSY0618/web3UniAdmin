@@ -7,6 +7,7 @@ const Home = lazy(() => import('../pages/Home'));
 const Dashboard = lazy(() => import('../pages/Dashboard'));
 const Login = lazy(() => import('../pages/Login'));
 const NotFound = lazy(() => import('../pages/NotFound'));
+const GraphQLCRUD = lazy(() => import('../pages/GraphQLCRUD'));
 
 // 认证路由（登录相关）
 const authRoutes = [
@@ -38,6 +39,16 @@ const protectedRoutes = [
           <Suspense fallback={<div>Loading...</div>}>
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          </Suspense>
+        ),
+      },
+       {
+        path: 'graphQLCRUD',
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ProtectedRoute>
+              <GraphQLCRUD />
             </ProtectedRoute>
           </Suspense>
         ),
