@@ -1,0 +1,19 @@
+name: Deploy to Cloudflare Pages
+on: [push]  # 代码推送时触发
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build Project
+        run: npm run build
+      - name: Deploy to Cloudflare
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.WEB3UINADMIN }}
+          accountId: ${{ secrets.WEB3UINADMINUSER }}
+          projectName: "your-project-name"  # 替换为 Pages 项目名称
+          directory: "dist"  # 构建产物目录
