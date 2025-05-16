@@ -146,7 +146,7 @@ const Login: React.FC = () => {
               type="submit"
               className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-lg transition-all duration-300"
             >
-              CONNECT111
+              CONNECT11199
             </Button>
           </form>
           {/* Typography 组件显示页脚文本
